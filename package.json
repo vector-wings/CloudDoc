@@ -1,18 +1,17 @@
 {
   "name": "cloud-doc",
   "main": "main.js",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "private": true,
   "description": "Online Markdown Editor using Qiniu cloud service",
   "author": {
     "name": "vectorwings",
     "email": "vectorwings@163.com"
   },
-  "repository": "https://gitee.com/vectorwings-opensource/cloud-doc",
+  "repository": "git@github.com:vector-wings/CloudDoc.git",
   "dependencies": {
     "bootstrap": "^4.3.1",
-    "electron-store": "^4.0.0",
-    "electron-updater": "^4.2.2"
+    "electron-store": "^4.0.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -25,7 +24,7 @@
     "dev": "concurrently \"wait-on http://localhost:3000 && electron .\" \"cross-env BROWSER=none npm start\"",
     "pack": "electron-builder --dir",
     "dist": "electron-builder",
-    "release": "electron-builder",
+    "release": "cross-env GH_TOKEN=7889bfbf8120252e279e31817fd0ba74d595a8b2 electron-builder",
     "prerelease": "npm run build && npm run buildMain",
     "prepack": "npm run build && npm run buildMain",
     "predist": "npm run build && npm run buildMain"
@@ -128,6 +127,7 @@
     "react-simplemde-editor": "^4.1.0",
     "uuid": "^3.3.2",
     "wait-on": "^3.3.0",
-    "webpack-cli": "^3.3.11"
+    "webpack-cli": "^3.3.11",
+    "electron-updater": "^4.2.2"
   }
 }
